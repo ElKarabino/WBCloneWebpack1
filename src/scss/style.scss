@@ -1,10 +1,10 @@
-@import '../scss/_fonts.scss';
-@import '../scss/header';
-@import '../scss/footer';
-@import '../scss/card.scss';
-@import '../scss/cdn.scss';
-@import '../scss/catalog.scss';
-@import '../scss/swiper.scss';
+@use '../scss/_fonts.scss';
+@use '../scss/header';
+@use '../scss/footer';
+@use '../scss/card.scss';
+@use '../scss/cdn.scss';
+@use '../scss/catalog.scss';
+@use'../scss/swiper.scss';
 
 
 * {

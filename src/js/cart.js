@@ -51,9 +51,18 @@ export function closeModalCart() {
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 // добавляем товар в корзину
 export function addToCart(product) {
+  // Add validation to check if product exists and has required properties
+  if (!product) {
+    console.error('Product is undefined or null');
+    return;
+  }
+  
+  if (!product.image || !product.title || !product.price) {
+    console.error('Product is missing required properties:', product);
+    return;
+  }
   const cartItemsContainer = modalCart.querySelector('.cart-items');
   const emptyCartText = modalCart.querySelector('.empty-cart-text');
-  const cartItemCount = cartItemsContainer.childElementCount;
   // Создаем элемент для товара в корзине
   // и добавляем его в контейнер
   const cartItem = document.createElement('div');
@@ -76,11 +85,11 @@ export function addToCart(product) {
   }
   cart.push(product);
   localStorage.setItem('cart', JSON.stringify(cart));
+  updateTotalPrice();
 }
 function renderCartFromStorage() {
   const cartItemsContainer = modalCart.querySelector('.cart-items');
   const emptyCartText = modalCart.querySelector('.empty-cart-text');
-  const totalPrice = modalCart.querySelector('.cart-total-price');
 
   cartItemsContainer.innerHTML = ''; // Очищаем перед отрисовкой
 
@@ -91,6 +100,11 @@ function renderCartFromStorage() {
   }
   let total = 0;
   cart.forEach(product => {
+    // Add validation here too for safety
+    if (!product || !product.image || !product.title || !product.price) {
+      console.warn('Invalid product in cart:', product);
+      return;
+        }
     const cartItem = document.createElement('div');
     cartItem.classList.add('cart-item');
 
@@ -109,13 +123,28 @@ function renderCartFromStorage() {
   });
   totalPrice.textContent = `$${total.toFixed(2)}`;
   emptyCartText.style.display = 'none';
+  updateTotalPrice();
 }
+
+function updateTotalPrice() {
+  const totalPrice = modalCart.querySelector('.cart-total-price');
+  let total = 0;
+  
+  cart.forEach(product => {
+    if (product && product.price) {
+      total += parseFloat(product.price);
+    }
+  });
+  
+  totalPrice.textContent = `$${total.toFixed(2)}`;
+}
+
 function clearCart() {
   cart = [];
+  localStorage.setItem('cart', JSON.stringify(cart));
   const cartItemsContainer = modalCart.querySelector('.cart-items');
   const emptyCartText = modalCart.querySelector('.empty-cart-text');
   cartItemsContainer.innerHTML = '';
   emptyCartText.style.display = 'block';
-  const totalPrice = modalCart.querySelector('.cart-total-price');
-  totalPrice.innerHTML = '$0'
+  updateTotalPrice();
 }
