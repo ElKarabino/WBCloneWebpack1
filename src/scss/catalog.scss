@@ -1,0 +1,130 @@
+.catalog {
+    background: #d0eaa7;
+    padding: 30px 0 30px 0  ;
+}
+.catalog_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.catalog_title {
+    font-size: 30px;
+    font-family: Inter Tight;
+}
+.catalog_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.catalog_item {
+    margin-right: 20px;
+}
+.catalog_item:last-child {
+    margin-right: 0px;
+}
+.catalog_link {
+    font-family: Inter Tight;
+}
+.burger_menu {
+    position: relative;
+    width: 25px;
+    height: 20px;
+    display: none;
+}
+.burger_line {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+}
+.burger_close {
+    display: none;
+}
+.overlay{
+    display: none;
+}
+.first_burger_line {
+    top: 0%
+}
+.second_burger_line {
+    top: 50%
+}
+.third_burger_line {
+    top: 100%
+}
+.active_catalog {
+    background-color: #03a203;
+    padding: 5px;
+    border-radius: 20px;
+}
+@media screen and (max-width: 768px) {
+    .burger_menu {
+        display: block;
+        cursor: pointer;
+    }
+    .catalog_list {
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        align-items: center;
+        padding: 30px 0 30px 0;
+        transform: translateX(100%);
+        transition: 0.5s;
+    }
+    .catalog_list_open {
+        transform: translateX(0%);
+        transition: 0.5s;
+    }
+    .catalog_item {
+        margin: 0;
+    }
+    .catalog_link {
+        color: white;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        z-index: 100;
+    }
+    .overlay_open {
+        opacity: 1;
+        display: block;
+    }
+    .burger_close {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        width: 20px;
+        height: 30px;
+        display: block;
+        z-index: 1000;
+        display: none;
+    }
+    .burger_close_open {
+        display: block;
+    }
+    .burger_close_line {
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+    }
+    .first_close_line {
+        transform: rotate(45deg);
+    }
+    .second_close_line {
+        transform: rotate(-45deg);
+    }
+}
