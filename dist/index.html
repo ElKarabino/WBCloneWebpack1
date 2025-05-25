@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./scss/style.scss">
+<script defer src="bundle.js"></script><link href="style.css" rel="stylesheet"></head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header_wrapper">
+                <a class="header_logo">
+                    <img alt="header_logo" src="./assets/img/wildberries.png">
+                </a>
+                <form class="header_search">
+                    <input type="search" placeholder="Search" class="header_search_input">
+                    <!-- <button class="header_search_button">Search</button>   -->
+                </form>
+                <a class="header-favourites">
+                    <img src="./assets/img/favourites.png" alt='favourites'>
+                </a>
+                <a class="header_basket">
+                    <img src="./assets/img/main-cart.png" alt="basket">
+                </a>
+                <a class="header-account">
+                    <img src="./assets/img/account.png" alt="account">
+                </a>
+            </div>
+        </div>
+    </header>
+    <section class="catalog">
+        <div class="container">
+            <div class="catalog_wrapper">
+                <h2 class="catalog_title">Catalog</h2>
+                <ul class="catalog_list">
+                    <li class="catalog_item">
+                        <a class="catalog_link">Men's clothing</a>
+                    </li>
+                    <li class="catalog_item">
+                        <a class="catalog_link">Jewelery</a>
+                    </li>
+                    <li class="catalog_item">
+                        <a class="catalog_link">Electronics</a>
+                    </li>
+                    <li class="catalog_item">
+                        <a class="catalog_link">Women's clothing</a>
+                    </li>
+                    <li class="catalog_item">
+                        <a class="catalog_link">All</a>
+                    </li>
+                </ul>
+                <div class="burger_close">
+                    <span class="burger_close_line first_close_line"></span>
+                    <span class="burger_close_line second_close_line"></span>
+                </div>
+                <div class="burger_menu">
+                    <span class="burger_line first_burger_line"></span>
+                    <span class="burger_line second_burger_line"></span>
+                    <span class="burger_line third_burger_line"></span>
+                </div>
+                <div class=" overlay"></div>
+            </div>
+        </div>
+    </section>
+    <section class="slider">
+        <div class="container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+      <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="./assets/img/Apple_ads.jpg" alt="apple">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/img/Google_Ads.jpg" alt="apple">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/img/huawei_ads.jpg" alt="apple">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/img/Samsung_ads.jpg" alt="apple">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/img/realme_ads.jpg" alt="apple">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/img/redmi_ads.png" alt="apple">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+  
+                <!-- navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div> 
+        </div>
+    </section>
+    <section id='cards'></section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_wrapper">
+                <ul class="footer_contacts">
+                    <li>
+                        <a class="footer_contacts_link">sms@gmail.com</a>
+                    </li>
+                    <li>
+                        <a class="footer_contacts_link">sms@yahoo.com</a>
+                    </li>
+                </ul>
+                <ul class="footer_socials">
+                    <li>
+                        <a class="footer_socials_link" href="https://www.facebook.com">Facebook</a>
+                    </li>
+                    <li>
+                        <a class="footer_socials_link" href="https://www.x.com">Twitter</a>
+                    </li>
+                </ul>
+            </div>      
+            <div class="footer_wrapper_second">
+                <p>Made by Milana, Shachlo and Stanislau</p>
+                <a href="https://github.com/ElKarabino/WBClone">Github</a>
+                <p>2025</p> 
+            </div>
+        </div>
+    </footer>
+     <button class="scroll_button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 11L12 5" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 11L12 5" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>                    
+    </button>
+    <script src="./js/script.js" type="module"></script>
+    <script src="./js/dom.js" type="module"></script>
+    <script src="./js/burger.js"></script>
+    <script src="./js/scroll.js"></script>
+    <script src="./js/cart.js" type="module"></script>
+</body>
+</html>
